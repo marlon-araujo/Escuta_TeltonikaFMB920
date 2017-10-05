@@ -44,5 +44,6 @@ namespace Escuta_Teltonika
         public int Altitude { get; set; }
         public int Ignicao { get; set; }
         public DateTime DataRastreador { get; set; }
+        public string Imei { get; set; }
     }
 }
