@@ -127,6 +127,7 @@ namespace Escuta_Teltonika
                 //getting the gps data after acknowledgement
                 byte[] ack = new byte[s.ReceiveBufferSize];
                 int y = Program.s.Receive(ack);
+                
 
                 //ESSA PARTE PRINTA HEXADECIMAL
                 //var ss = BitConverter.ToString(ack, 0, y).Replace("-", string.Empty);
@@ -201,15 +202,15 @@ namespace Escuta_Teltonika
 
                 Gravar(lista, mensagem, imei);
 
-                s.Close();
+                
                 //myList.Stop();
                 #endregion
             }
             catch (Exception e)
             {
-                Console.WriteLine(e);
+                //Console.WriteLine(e);
             }
-
+            s.Close();
         }
 
         public static List<Position> ParseData(Byte[] byteBuffer, int size)
